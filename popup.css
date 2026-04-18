@@ -82,6 +82,10 @@ select {
   align-items: flex-start;
 }
 
+.support-stack {
+  display: block;
+}
+
 .support-copy {
   min-width: 0;
 }
@@ -98,6 +102,12 @@ select {
   color: #d5e0d2;
 }
 
+.mono {
+  word-break: break-all;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
+
 .donate-link {
   flex-shrink: 0;
   border-radius: 999px;
@@ -111,6 +121,12 @@ select {
 .donate-link:hover,
 .donate-link:focus-visible {
   background: #96ff9f;
+}
+
+.donate-button {
+  margin-top: 12px;
+  border: 0;
+  cursor: pointer;
 }
 
 .stat-label {

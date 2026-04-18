@@ -7,6 +7,7 @@ const STORAGE_KEYS = {
 };
 
 const KO_FI_URL = "https://ko-fi.com/threej";
+const BITCOIN_ADDRESS = "bc1qmc4n2e7w22n87x5duxurgafc65nfp8fsalfwpu";
 
 const DEFAULT_SETTINGS = {
   antiAIEnabled: true,
@@ -21,9 +22,32 @@ const sensitivitySelect = document.getElementById("sensitivity");
 const hideAiOverviewInput = document.getElementById("hideAiOverview");
 const statsValue = document.getElementById("statsValue");
 const donateLink = document.getElementById("donateLink");
+const btcAddressText = document.getElementById("btcAddressText");
+const copyBtcButton = document.getElementById("copyBtcButton");
 
 if (donateLink) {
   donateLink.href = KO_FI_URL;
+}
+
+if (btcAddressText) {
+  btcAddressText.textContent = BITCOIN_ADDRESS;
+}
+
+async function copyBitcoinAddress() {
+  if (!copyBtcButton) return;
+
+  try {
+    await navigator.clipboard.writeText(BITCOIN_ADDRESS);
+    copyBtcButton.textContent = "Copied";
+    window.setTimeout(() => {
+      copyBtcButton.textContent = "Copy BTC";
+    }, 1400);
+  } catch {
+    copyBtcButton.textContent = "Copy failed";
+    window.setTimeout(() => {
+      copyBtcButton.textContent = "Copy BTC";
+    }, 1600);
+  }
 }
 
 function setStatsText(stats) {
@@ -82,3 +106,6 @@ enabledInput.addEventListener("change", saveSettings);
 modeSelect.addEventListener("change", saveSettings);
 sensitivitySelect.addEventListener("change", saveSettings);
 hideAiOverviewInput.addEventListener("change", saveSettings);
+if (copyBtcButton) {
+  copyBtcButton.addEventListener("click", copyBitcoinAddress);
+}
