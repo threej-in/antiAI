@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>antiAI</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <div class="eyebrow">antiAI</div>
+      <h1>Hide AI media from social feeds</h1>
+      <p class="subcopy">Heuristic filter for image and video posts on major social platforms.</p>
+
+      <label class="control toggle">
+        <span>Enabled</span>
+        <input id="enabled" type="checkbox" />
+      </label>
+
+      <label class="control">
+        <span>Mode</span>
+        <select id="mode">
+          <option value="remove">Hide posts</option>
+          <option value="blur">Blur posts</option>
+        </select>
+      </label>
+
+      <label class="control">
+        <span>Sensitivity</span>
+        <select id="sensitivity">
+          <option value="normal">Normal</option>
+          <option value="strict">Strict</option>
+        </select>
+      </label>
+
+      <label class="control toggle">
+        <span>Hide AI Overview</span>
+        <input id="hideAiOverview" type="checkbox" />
+      </label>
+
+      <section class="stats">
+        <div class="stat-label">Last page scan</div>
+        <div class="stat-value" id="statsValue">No scan yet</div>
+      </section>
+
+      <section class="support">
+        <div class="support-copy">
+          <div class="support-label">Support antiAI</div>
+          <div class="support-text">Help fund selector fixes and platform updates.</div>
+        </div>
+        <a
+          id="donateLink"
+          class="donate-link"
+          href="https://ko-fi.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Buy me a coffee
+        </a>
+      </section>
+
+      <p class="footnote">antiAI uses captions, alt text, labels, and media URLs. It will miss unlabeled AI content.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+  </html>
