@@ -6,7 +6,7 @@ const STORAGE_KEYS = {
   stats: "antiAIStats"
 };
 
-const KO_FI_URL = "https://ko-fi.com/YOUR_HANDLE";
+const KO_FI_URL = "https://ko-fi.com/threej";
 
 const DEFAULT_SETTINGS = {
   antiAIEnabled: true,
